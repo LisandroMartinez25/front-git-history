@@ -1,0 +1,28 @@
+@import '/src/assets/vars';
+
+.toolbar {
+  background: $blue-ligth;
+  height: 100px;
+  padding: 5px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.img-logo img {
+  width: 100%;
+}
+
+.title {
+  display: inline-block;
+  color: $letter-color-ligth;
+}
