@@ -1,0 +1,54 @@
+@import '/src/assets/vars';
+
+.container {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  bottom: 0;
+  margin: 0;
+}
+
+.nav-menu {
+  background: $blue-ligth;
+  color: $letter-color-ligth;
+  border: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option {
+  margin: 0;
+  padding: 30px 35px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: $letter-color-ligth;
+  color: $blue-ligth;
+}
+
+.option mat-icon {
+  margin: 0 15px;
+}
+
+.normal-span {
+  display: inline-block;
+  width: 2px;
+  height: 25px;
+  background: $blue-ligth;
+}
+
+.selected-option {
+  background: $letter-color-ligth;
+  color: $blue-ligth;
+}
+
+.content {
+  background: $back-color;
+}
