@@ -3,9 +3,9 @@
   <mat-drawer mode="side" opened class="nav-menu">
     <nav>
       <ul class="menu">
-        <li class="option" *ngFor="let option of menu; let i = index" (click)="navigate(option.route, i)">
-          <span class="option-selected" *ngIf="option.selected"></span>
-          <mat-icon [ngClass]="{'c-orange': option.selected}">{{ option.icon }}</mat-icon>{{ option.option }}
+        <li class="option" *ngFor="let option of menu; let i = index" (click)="navigate(option.route, i)" [ngClass]="{'selected-option': option.selected}">
+          <span class="normal-span"></span>
+          <mat-icon>{{ option.icon }}</mat-icon>{{ option.option }}
         </li>
       </ul>
     </nav>

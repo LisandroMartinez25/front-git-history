@@ -22,6 +22,11 @@ export class AppComponent {
       icon: 'code',
       selected: true
     },{
+      option: 'Branches',
+      route: 'Branches',
+      icon: 'device_hub',
+      selected: false
+    },{
       option: 'Commits',
       route: 'Commits',
       icon: 'dynamic_feed',
