@@ -5,6 +5,7 @@ export interface ICommit {
   node_id?: string;
   html_url?: string;
   commit?: ICommitDetail;
+  author?: IUser;
 }
 
 export interface ICommitDetail {

@@ -30,6 +30,10 @@
         <mat-chip class="chip" selected>Last Commit</mat-chip>
         <a class="link" [href]="lastCommit.html_url" target="_blank">{{ lastCommit.sha }} <mat-icon>open_in_new</mat-icon></a>
       </p>
+      <p class="field">
+        <mat-chip class="chip" selected>Langauage</mat-chip>
+        {{ repository.language }}
+      </p>
     </mat-chip-list>
   </mat-card-content>
 </mat-card>

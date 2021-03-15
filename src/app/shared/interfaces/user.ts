@@ -9,4 +9,5 @@ export interface IUser {
   email?: string;
   blog?: string;
   location?: string;
+  date?: string;
 }
