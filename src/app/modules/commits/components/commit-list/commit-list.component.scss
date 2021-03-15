@@ -1,0 +1,60 @@
+@import '/src/assets/vars';
+
+.card {
+  margin-bottom: 15px;
+}
+
+.actions {
+  padding: 15px 30px;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+.btn {
+  background: $blue-ligth;
+  color: $letter-color-ligth;
+  border: 1px solid $blue-ligth;
+}
+
+.btn:hover {
+  background: $letter-color-ligth;
+  color: $blue-ligth;
+}
+
+.header-commit{
+  overflow: hidden;
+}
+
+.title-commit {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.subtitle-commit {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.content {
+  margin: 0;
+}
+
+.header-filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.txt-filter {
+  margin-left: 15px;
+  width: 70%;
+}
+
+.select-branch {
+  width: 25%;
+}

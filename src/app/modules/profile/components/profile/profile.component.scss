@@ -1,0 +1,40 @@
+.content{
+  padding: 15px;
+}
+
+.header-user{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 175px;
+  height: 175px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.title-user {
+  text-align: center;
+}
+
+.content-user {
+  padding: 30px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field {
+  width: 31%;
+  min-width: 200px;
+}

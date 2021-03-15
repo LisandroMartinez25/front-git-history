@@ -18,6 +18,12 @@ export class CommitService {
     return this.httpClient.get<ICommit[]>(`${this.url}/commits`);
   }
 
+  public getCommitsByBranch(sha: string): Observable<ICommit[]> {
+    const params = { sha }
+
+    return this.httpClient.get<ICommit[]>(`${this.url}/commits`, { params });
+  }
+
   public getLastCommit(): Observable<ICommit> {
     return this.httpClient.get<ICommit>(`${this.url}/commits`).pipe(map(e => e[0]));
   }

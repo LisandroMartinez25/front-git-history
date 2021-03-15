@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subscription } from 'rxjs';
+
 import { IBranch } from 'src/app/shared/interfaces/branch';
 import { ICommit } from 'src/app/shared/interfaces/commit';
 import { IRepository } from 'src/app/shared/interfaces/repository';
@@ -33,11 +35,13 @@ export class RepositoryComponent implements OnInit {
     this.loading = true;
     this.branchesURL = `https://github.com/${environment.github_user}/${environment.github_repo}/branches`;
   }
-
+  
   ngOnInit(): void {
+    if(!this.loading) this.lodaingService.changeLoading(true);
+
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;
-    });
+    }).unsubscribe();
 
     this.getRepository();
     this.getLastCommit();
@@ -48,6 +52,7 @@ export class RepositoryComponent implements OnInit {
     this.repositoryService.getRepository().subscribe((repository: IRepository) => {
       this.repository = repository;
       this.lodaingService.changeLoading(false);
+      this.loading = false;
     });
   }
 

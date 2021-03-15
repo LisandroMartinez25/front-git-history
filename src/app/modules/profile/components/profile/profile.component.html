@@ -1,0 +1,44 @@
+<mat-card class="card">
+  <mat-card-content class="content">
+    <div class="header-user">
+      <div class="avatar">
+        <img [src]="user?.avatar_url" [alt]="user.login">
+      </div>
+      <div class="title-user">
+        <h2>{{ user.name }}</h2>
+        <h3>{{ user.bio }}</h3>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="content-user">
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Login</mat-label>
+        <input matInput placeholder="Placeholder" readonly [(ngModel)]="user.login">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>email</mat-label>
+        <input matInput placeholder="Placeholder" readonly value="lisann.mtz@gmail.com">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>blog</mat-label>
+        <input matInput placeholder="Placeholder" readonly [(ngModel)]="user.blog">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>ID</mat-label>
+        <input matInput placeholder="Placeholder" readonly [(ngModel)]="user.id">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Location</mat-label>
+        <input matInput placeholder="Placeholder" readonly [(ngModel)]="user.location">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>URL</mat-label>
+        <input matInput placeholder="Placeholder" readonly [(ngModel)]="user.html_url">
+      </mat-form-field>
+    </div>
+
+  </mat-card-content>
+</mat-card>
