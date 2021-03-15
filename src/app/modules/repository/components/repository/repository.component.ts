@@ -38,6 +38,7 @@ export class RepositoryComponent implements OnInit {
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;
     });
+    this.lodaingService.changeLoading(true);
 
     this.getRepository();
     this.getLastCommit();

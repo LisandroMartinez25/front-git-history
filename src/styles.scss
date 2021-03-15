@@ -1,8 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './assets/vars';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 16px; }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.mat-icon {
+  vertical-align: sub !important;
+}
+
+.field mat-icon {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: $letter-color-dark;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: $blue-ligth;
 }
