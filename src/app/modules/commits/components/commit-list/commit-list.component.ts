@@ -17,6 +17,7 @@ export class CommitListComponent implements OnInit {
   public commits: ICommit[];
   public branchSelected: IBranch;
   public branches: IBranch[];
+  public filterMessage: string;
 
   constructor(
     private commitService: CommitService,
@@ -27,13 +28,16 @@ export class CommitListComponent implements OnInit {
     this.loading = true;
     this.branchSelected = {};
     this.branches = [];
+    this.filterMessage = '';
+    this.commits = [];
   }
-
+  
   ngOnInit(): void {
+    if(!this.loading) this.lodaingService.changeLoading(true);
+
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
-      this.loading = loading;
-    });
-    this.lodaingService.changeLoading(true);
+      this.loading = loading;  
+    }).unsubscribe();
 
     this.getBranches();
   }
@@ -43,6 +47,7 @@ export class CommitListComponent implements OnInit {
       this.branches = branches;
       this.branchSelected = this.branches.find((branch: IBranch) => branch.name === 'main')
       this.lodaingService.changeLoading(false);
+      this.loading = false;
       this.getCommitsByBranch();
     })
   }
