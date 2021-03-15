@@ -14,9 +14,6 @@ const routes: Routes = [{
   path: 'Profile',
   loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
 },{
-  path: 'Pull-Requests',
-  loadChildren: () => import('./modules/pull-requests/pull-requests.module').then(m => m.PullRequestsModule)
-},{
   path: 'Issues',
   loadChildren: () => import('./modules/issues/issues.module').then(m => m.IssuesModule)
 },{

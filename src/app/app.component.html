@@ -11,6 +11,7 @@
     </nav>
   </mat-drawer>
   <mat-drawer-content class="content">
+    <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

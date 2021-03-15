@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  github_url: 'https://api.github.com/',
+  github_repo: 'front-git-history',
+  github_user: 'LisandroMartinez25'
 };
 
 /*
