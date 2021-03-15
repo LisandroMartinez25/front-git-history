@@ -33,17 +33,12 @@ export class AppComponent implements OnInit {
     },{
       option: 'Commits',
       route: 'Commits',
-      icon: 'dynamic_feed',
+      icon: 'insights',
       selected: false
     },{
       option: 'Profile',
       route: 'Profile',
       icon: 'person_outline',
-      selected: false
-    },{
-      option: 'Pull Requests',
-      route: 'Pull_Requests',
-      icon: 'insights',
       selected: false
     },{
       option: 'Issues',

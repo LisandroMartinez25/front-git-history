@@ -9,4 +9,5 @@ export interface IRepository {
   html_url?: string;
   description?: string;
   owner?: IUser;
+  ssh_url?: string;
 }

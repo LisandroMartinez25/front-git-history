@@ -6,4 +6,5 @@ export interface IUser {
   html_url?: string;
   name?: string;
   bio?: string;
+  email?: string;
 }
