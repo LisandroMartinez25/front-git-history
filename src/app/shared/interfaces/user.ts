@@ -7,4 +7,6 @@ export interface IUser {
   name?: string;
   bio?: string;
   email?: string;
+  blog?: string;
+  location?: string;
 }
