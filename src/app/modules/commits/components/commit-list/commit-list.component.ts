@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommitDetailComponent } from 'src/app/shared/dialogs/commit-detail/commit-detail.component';
 import { IBranch } from 'src/app/shared/interfaces/branch';
 import { ICommit } from 'src/app/shared/interfaces/commit';
 import { BranchService } from 'src/app/shared/services/branch.service';
@@ -23,7 +25,8 @@ export class CommitListComponent implements OnInit {
     private commitService: CommitService,
     private lodaingService: LoadingService,
     private branchService: BranchService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {
     this.loading = true;
     this.branchSelected = {};
@@ -68,6 +71,13 @@ export class CommitListComponent implements OnInit {
       this._snackBar.open('SHH Copied', 'Done', {
         duration: 2000,
       });
+    });
+  }
+
+  public openCommitDetailDialog(sha: string): void {
+    const dialogRef = this.dialog.open(CommitDetailComponent, {
+      width: '60%',
+      data: { sha }
     });
   }
 }

@@ -13,11 +13,11 @@
 
 <mat-card class="card" *ngFor="let commit of commits | arayCommitFilter:filterMessage:'message'">
   <mat-card-content class="content">
-    <p class="title-commit">{{ commit.commit.message }}</p>
-    <p class="subtitle-commit">By: <a href="/Profile" class="link">{{ commit.commit.author.name }}</a> - {{ commit.commit.author.date | date: 'YYYY-MM-dd' }}</p>
+    <p class="title-commit">{{ commit.commit?.message }}</p>
+    <p class="subtitle-commit">By: <a href="/Profile" class="link">{{ commit.commit?.author?.name }}</a> - {{ commit.commit?.author?.date | date: 'YYYY-MM-dd' }}</p>
     <p class="field">SHA: {{ commit.sha }} <mat-icon (click)="copySSH(commit.sha)">content_copy</mat-icon></p>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-raised-button class="btn">View Detail</button>
+    <button mat-raised-button class="btn" (click)="openCommitDetailDialog(commit.sha)">View Detail</button>
   </mat-card-actions>
 </mat-card>

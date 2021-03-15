@@ -26,11 +26,6 @@ export class AppComponent implements OnInit {
       icon: 'code',
       selected: true
     },{
-      option: 'Branches',
-      route: 'Branches',
-      icon: 'device_hub',
-      selected: false
-    },{
       option: 'Commits',
       route: 'Commits',
       icon: 'insights',
@@ -39,11 +34,6 @@ export class AppComponent implements OnInit {
       option: 'Profile',
       route: 'Profile',
       icon: 'person_outline',
-      selected: false
-    },{
-      option: 'Issues',
-      route: 'Issues',
-      icon: 'task',
       selected: false
     }]
   }

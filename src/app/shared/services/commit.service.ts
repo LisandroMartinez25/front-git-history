@@ -27,4 +27,8 @@ export class CommitService {
   public getLastCommit(): Observable<ICommit> {
     return this.httpClient.get<ICommit>(`${this.url}/commits`).pipe(map(e => e[0]));
   }
+
+  public getCommit(sha: string): Observable<ICommit> {
+    return this.httpClient.get<ICommit>(`${this.url}/commits/${sha}`);
+  }
 }

@@ -1,0 +1,33 @@
+<h2 class="title">Commit Detail</h2>
+
+<div class="box">
+  <h3 class="title-box">Author</h3>
+  <div class="content-author">
+    <div class="avatar">
+      <a [href]="commit.author.html_url" target="_blank"><img [src]="commit.author?.avatar_url" [alt]="commit.author?.login"></a>
+    </div>
+    <p class="field">
+      <span class="field-bold">Name: </span>
+      <a class="link" [href]="commit.author.html_url" target="_blank">{{ commit.commit?.author?.name }} <mat-icon>open_in_new</mat-icon></a>
+    </p>
+    <p class="field">
+      <span class="field-bold">E-mail: </span>{{ commit.commit?.author?.email }}
+    </p>
+  </div>
+</div>
+
+<div class="box">
+  <h3 class="title-box">Info</h3>
+  <p class="field"><span class="field-bold">SHA: </span>{{ commit.sha }} <mat-icon (click)="copySSH(commit.sha)">content_copy</mat-icon></p>
+  <p class="field"><span class="field-bold">Date: </span> {{ commit.commit?.author?.date | date: 'YYYY-MM-dd' }}</p>
+</div>
+
+<div class="box">
+  <h3 class="title-box">Message</h3>
+  <p>{{ commit.commit?.message }}</p>
+</div>
+
+<div class="actions">
+  <a class="btn" mat-raised-button [href]="commit.author.html_url" target="_blank"[href]="commit.html_url" target="_blank">Go to GitHub</a>
+  <button class="btn" mat-raised-button mat-dialog-close>Done</button>
+</div>
