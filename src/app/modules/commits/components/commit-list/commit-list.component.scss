@@ -42,3 +42,19 @@
 .content {
   margin: 0;
 }
+
+.header-filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.txt-filter {
+  margin-left: 15px;
+  width: 70%;
+}
+
+.select-branch {
+  width: 25%;
+}

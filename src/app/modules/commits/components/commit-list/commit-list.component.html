@@ -1,13 +1,17 @@
-<mat-card class="card">
-  <mat-form-field appearance="fill">
+<mat-card class="card header-filter">
+  <mat-form-field appearance="outline" class="select-branch">
     <mat-label>Branch</mat-label>
     <mat-select [value]="branchSelected.name" (selectionChange)="changeBranch($event.value)">
       <mat-option *ngFor="let branch of branches" [value]="branch.name">{{ branch.name }}</mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-form-field appearance="outline" class="txt-filter">
+    <mat-label>Filter by message</mat-label>
+    <input matInput placeholder="Message" [(ngModel)]="filterMessage">
+  </mat-form-field>
 </mat-card>
 
-<mat-card class="card" *ngFor="let commit of commits">
+<mat-card class="card" *ngFor="let commit of commits | arayCommitFilter:filterMessage:'message'">
   <mat-card-content class="content">
     <p class="title-commit">{{ commit.commit.message }}</p>
     <p class="subtitle-commit">By: <a href="/Profile" class="link">{{ commit.commit.author.name }}</a> - {{ commit.commit.author.date | date: 'YYYY-MM-dd' }}</p>
