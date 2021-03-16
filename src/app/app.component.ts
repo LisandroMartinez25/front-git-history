@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { IMenu } from './shared/interfaces/menu';
 import { LoadingService } from './shared/services/loading.service';
+import { MenuService } from './shared/services/menu.service';
+import { Menu } from './shared/values/globals';
 
 @Component({
   selector: 'app-root',
@@ -16,34 +18,25 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private menuService: MenuService
   ) {
     this.title = 'Git History';
     this.loading = true;
     this.menu = [{
       option: 'Repository',
-      route: 'Repository',
+      route: Menu.REPOSITORY,
       icon: 'code',
-      selected: true
-    },{
-      option: 'Branches',
-      route: 'Branches',
-      icon: 'device_hub',
       selected: false
     },{
       option: 'Commits',
-      route: 'Commits',
+      route: Menu.COMMITS,
       icon: 'insights',
       selected: false
     },{
       option: 'Profile',
-      route: 'Profile',
+      route: Menu.PROFILE,
       icon: 'person_outline',
-      selected: false
-    },{
-      option: 'Issues',
-      route: 'Issues',
-      icon: 'task',
       selected: false
     }]
   }
@@ -51,6 +44,18 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loadingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;
+    });
+
+    this.menuService.menuSubscriber().subscribe((optionMenu: string) => {
+      const idx = this.menu.findIndex(option => option.route === optionMenu);
+
+      if (idx >= 0) {
+        this.menu.forEach((option, index) => { 
+          option.selected = index === idx ? true : false;
+        });
+      } else {
+        this.menu[0] .selected = true;
+      }
     });
   }
 

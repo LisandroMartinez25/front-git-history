@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommitDetailComponent } from 'src/app/shared/dialogs/commit-detail/commit-detail.component';
 import { IBranch } from 'src/app/shared/interfaces/branch';
 import { ICommit } from 'src/app/shared/interfaces/commit';
 import { BranchService } from 'src/app/shared/services/branch.service';
 import { CommitService } from 'src/app/shared/services/commit.service';
 
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
+import { Menu } from 'src/app/shared/values/globals';
 
 @Component({
   selector: 'app-commit-list',
@@ -23,7 +27,9 @@ export class CommitListComponent implements OnInit {
     private commitService: CommitService,
     private lodaingService: LoadingService,
     private branchService: BranchService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog,
+    private menuService: MenuService
   ) {
     this.loading = true;
     this.branchSelected = {};
@@ -38,6 +44,7 @@ export class CommitListComponent implements OnInit {
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;  
     }).unsubscribe();
+    this.menuService.changeOptionMenu(Menu.COMMITS);
 
     this.getBranches();
   }
@@ -68,6 +75,13 @@ export class CommitListComponent implements OnInit {
       this._snackBar.open('SHH Copied', 'Done', {
         duration: 2000,
       });
+    });
+  }
+
+  public openCommitDetailDialog(sha: string): void {
+    this.dialog.open(CommitDetailComponent, {
+      width: '60%',
+      data: { sha }
     });
   }
 }

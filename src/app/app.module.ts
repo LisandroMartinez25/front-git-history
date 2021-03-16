@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { MaterialModule } from './shared/material/material.module';
 import { LoadingService } from './shared/services/loading.service';
+import { CommitDetailComponent } from './shared/dialogs/commit-detail/commit-detail.component';
 
 @NgModule({
   declarations: [

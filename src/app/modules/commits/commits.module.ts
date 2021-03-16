@@ -6,13 +6,15 @@ import { CommitsRoutingModule } from './commits-routing.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { ArrayFilterPipe } from 'src/app/shared/pipes/arrayFilter.pipe';
 import { FormsModule } from '@angular/forms';
+import { CommitDetailComponent } from 'src/app/shared/dialogs/commit-detail/commit-detail.component';
 
 
 
 @NgModule({
   declarations: [
     CommitListComponent,
-    ArrayFilterPipe
+    ArrayFilterPipe,
+    CommitDetailComponent
   ],
   imports: [
     CommonModule,

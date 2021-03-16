@@ -10,4 +10,5 @@ export interface IRepository {
   description?: string;
   owner?: IUser;
   ssh_url?: string;
+  language?: string;
 }

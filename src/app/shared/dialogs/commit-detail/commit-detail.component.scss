@@ -1,0 +1,74 @@
+@import '/src/assets/vars';
+
+.box {
+  margin: 25px 0;
+  border: 1px solid $blue-ligth;
+  border-radius: 6px;
+  position: relative;
+  padding: 35px 25px 25px;
+}
+
+.box .title-box {
+  position: absolute;
+  background: $letter-color-ligth;
+  top: -15px;
+  display: inline;
+  padding: 0 15px;
+  font-weight: 500;
+  border: 1px solid $blue-ligth;
+  border-radius: 6px;
+}
+
+.box p {
+  margin: 5px 0;
+}
+
+.box .field-bold {
+  font-weight: bold;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.box .content-author {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field .link {
+  color: $letter-color-dark;
+  text-decoration: none;
+}
+
+.field .link:hover {
+  color: $blue-ligth;
+  text-decoration: underline;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions .btn {
+  background: $blue-ligth;
+  color: $letter-color-ligth;
+  border: 1px solid $blue-ligth;
+  margin-left: 15px;
+}
+
+.actions .btn:hover {
+  background: $letter-color-ligth;
+  color: $blue-ligth;
+}
