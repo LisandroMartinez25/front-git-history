@@ -8,6 +8,8 @@ import { IRepository } from 'src/app/shared/interfaces/repository';
 import { BranchService } from 'src/app/shared/services/branch.service';
 import { CommitService } from 'src/app/shared/services/commit.service';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
+import { Menu } from 'src/app/shared/values/globals';
 import { environment } from 'src/environments/environment';
 import { RepositoryService } from '../../../../shared/services/repository.service';
 
@@ -28,7 +30,8 @@ export class RepositoryComponent implements OnInit {
     private commistService: CommitService,
     private branchService: BranchService,
     private lodaingService: LoadingService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private menuService: MenuService
   ) {
     this.repository = {};
     this.lastCommit = {};
@@ -42,6 +45,7 @@ export class RepositoryComponent implements OnInit {
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;
     }).unsubscribe();
+    this.menuService.changeOptionMenu(Menu.REPOSITORY);
 
     this.getRepository();
     this.getLastCommit();

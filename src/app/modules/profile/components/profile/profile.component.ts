@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/shared/interfaces/user';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
 import { UserService } from 'src/app/shared/services/user.service';
+import { Menu } from 'src/app/shared/values/globals';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +16,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private lodaingService: LoadingService,
-    private userService: UserService
+    private userService: UserService,
+    private menuService: MenuService
   ) {
     this.loading = true;
     this.user = {};
@@ -26,6 +29,7 @@ export class ProfileComponent implements OnInit {
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;
     }).unsubscribe();
+    this.menuService.changeOptionMenu(Menu.PROFILE);
 
     this.getUser();
   }
