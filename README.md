@@ -1,27 +1,50 @@
 # FrontGitHistory
+##### _By: [Lisandro Martínez](https://github.com/LisandroMartinez25)_
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+This a project to monitore all commits for each branch on this repository
 
-## Development server
+## Requeriments
+ - Node v12+
+ - Angular cli
+### Node
+You must install [Node.js](https://nodejs.org/) v12+ from here [https://nodejs.org/](https://nodejs.org/).
+### Angular cli
+Oonce installed `Node`. You need instal the Angular cli.
+Open your terminal and verify you `Node version` with:
+ ```sh
+node --version
+```
+Now intall Angular cli running the next command
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ ```sh
+npm install -g @angular/cli
+```
+## Installation
+Clone this project in your computer using git:
 
-## Code scaffolding
+- http: `git clone https://github.com/LisandroMartinez25/front-git-history.git`
+- ssh: `git clone git@github.com:LisandroMartinez25/front-git-history.git`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once cloned open your terminal and go to the project folder `/front-git-history`. 
+Install the dependencies rurnning the next command on your terminal.
+ ```sh
+npm install
+```
+## Running
+After install all dependences run the next command on your terminal.
+
+```sh
+ng serve
+```
+Open you browser and enter in next url: `http://localhost:4200/`
 
 ## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For build the project run:
+```sh
+gulp build
+```
+For production:
+```sh
+gulp build --prod
+```
+The build artifacts will be stored in the `dist/` directory.
