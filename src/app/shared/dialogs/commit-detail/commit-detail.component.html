@@ -4,11 +4,11 @@
   <h3 class="title-box">Author</h3>
   <div class="content-author">
     <div class="avatar">
-      <a [href]="commit.author.html_url" target="_blank"><img [src]="commit.author?.avatar_url" [alt]="commit.author?.login"></a>
+      <a [href]="commit.author?.html_url" target="_blank"><img [src]="commit.author?.avatar_url" [alt]="commit.author?.login"></a>
     </div>
     <p class="field">
       <span class="field-bold">Name: </span>
-      <a class="link" [href]="commit.author.html_url" target="_blank">{{ commit.commit?.author?.name }} <mat-icon>open_in_new</mat-icon></a>
+      <a class="link" [href]="commit.author?.html_url" target="_blank">{{ commit.commit?.author?.name }} <mat-icon>open_in_new</mat-icon></a>
     </p>
     <p class="field">
       <span class="field-bold">E-mail: </span>{{ commit.commit?.author?.email }}
@@ -28,6 +28,6 @@
 </div>
 
 <div class="actions">
-  <a class="btn" mat-raised-button [href]="commit.author.html_url" target="_blank"[href]="commit.html_url" target="_blank">Go to GitHub</a>
+  <a class="btn" mat-raised-button target="_blank" [href]="commit.html_url" target="_blank">Go to GitHub</a>
   <button class="btn" mat-raised-button mat-dialog-close>Done</button>
 </div>

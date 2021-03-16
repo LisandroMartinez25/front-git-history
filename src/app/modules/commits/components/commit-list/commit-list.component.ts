@@ -8,6 +8,8 @@ import { BranchService } from 'src/app/shared/services/branch.service';
 import { CommitService } from 'src/app/shared/services/commit.service';
 
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { MenuService } from 'src/app/shared/services/menu.service';
+import { Menu } from 'src/app/shared/values/globals';
 
 @Component({
   selector: 'app-commit-list',
@@ -26,7 +28,8 @@ export class CommitListComponent implements OnInit {
     private lodaingService: LoadingService,
     private branchService: BranchService,
     private _snackBar: MatSnackBar,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private menuService: MenuService
   ) {
     this.loading = true;
     this.branchSelected = {};
@@ -41,6 +44,7 @@ export class CommitListComponent implements OnInit {
     this.lodaingService.loadingSubscriber().subscribe((loading: boolean) => {
       this.loading = loading;  
     }).unsubscribe();
+    this.menuService.changeOptionMenu(Menu.COMMITS);
 
     this.getBranches();
   }
@@ -75,7 +79,7 @@ export class CommitListComponent implements OnInit {
   }
 
   public openCommitDetailDialog(sha: string): void {
-    const dialogRef = this.dialog.open(CommitDetailComponent, {
+    this.dialog.open(CommitDetailComponent, {
       width: '60%',
       data: { sha }
     });
