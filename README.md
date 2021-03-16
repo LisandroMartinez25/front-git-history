@@ -41,10 +41,10 @@ Open you browser and enter in next url: `http://localhost:4200/`
 ## Build
 For build the project run:
 ```sh
-gulp build
+ng build
 ```
 For production:
 ```sh
-gulp build --prod
+ng build --prod
 ```
 The build artifacts will be stored in the `dist/` directory.
